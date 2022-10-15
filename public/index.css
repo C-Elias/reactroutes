@@ -21,6 +21,8 @@ a {
 
 .header a.active {
   font-weight: bold;
+  color: rgb(28, 57, 0);
+  font-size: 10px;
 }
 
 .header {

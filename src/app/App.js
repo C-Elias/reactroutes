@@ -10,7 +10,8 @@ import Author from "../components/Author";
 import Profile from "../components/Profile";
 
 import "./App.css";
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 
 function App() {
@@ -19,19 +20,30 @@ function App() {
       <Header />
       <main>
 
-      <Route path='/about'>  
-        <About />
-      </Route>
-
-      <Route path='/signup'>  
-        <SignUp />
+        <Switch>
+          
+      <Route path='/articles/:title'>  
+        <Article />
       </Route>
 
       <Route path='/articles'>  
         <Articles />
       </Route>
 
-      
+
+      <Route path='/about'>  
+        <About />
+      </Route>
+
+      <Route path='/sign-up'>  
+        <SignUp />
+      </Route>
+
+
+      <Route path='/authors/:name'>  
+        <Author />
+      </Route>
+
       <Route path='/categories'>  
         <Categories />
       </Route>
@@ -39,7 +51,9 @@ function App() {
       <Route path='/profile'>  
         <Profile />
       </Route>
-      
+
+        </Switch>
+
       </main>
       <Footer />
     </Router>
